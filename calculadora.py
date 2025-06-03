@@ -1,3 +1,5 @@
+
+# lista para ir guardando los gatos 
 gastos = []
 
 def agregar_gasto():
@@ -13,6 +15,8 @@ def agregar_gasto():
         print("Monto inválido. Debe ser un número.")
     return
 
+
+# funciones para todo el programa 
 
 def mostrar_total():
     total = sum(gasto["monto"] for gasto in gastos)
@@ -54,6 +58,10 @@ def eliminar_gasto():
         print("Debe ingresar un número.")
     return
 
+#==============================================================================
+
+# menu principal del programa 
+
 def menu():
     while True:
         print("\n--- Calculadora de Gastos ---")
@@ -78,6 +86,8 @@ def menu():
             break
         else:
             print("Opción no válida.")
+
+# ==================================================================
 
 # Ejecutar menú
 menu()
