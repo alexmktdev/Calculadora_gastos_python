@@ -12,6 +12,19 @@ def mostrar_total():
     total = sum(gasto["monto"] for gasto in gastos)
     print(f"Total gastado: ${total:.2f}")
 
+def categoria_mayor_gasto():
+    if not gastos:
+        print("No hay gastos registrados.")
+        return
+
+    categorias = {}
+    for gasto in gastos:
+        categoria = gasto["categoria"]
+        categorias[categoria] = categorias.get(categoria, 0) + gasto["monto"]
+
+    mayor_categoria = max(categorias, key=categorias.get)
+    print(f"Categoría con mayor gasto: {mayor_categoria} (${categorias[mayor_categoria]:.2f})")
+
 
 
 def menu():
@@ -30,7 +43,7 @@ def menu():
         elif opcion == "2":
             mostrar_total()
         elif opcion == "3":
-            pass
+            categoria_mayor_gasto()
         elif opcion == "4":
             pass
         elif opcion == "5":
