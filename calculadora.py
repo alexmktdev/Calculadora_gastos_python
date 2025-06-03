@@ -8,6 +8,12 @@ def agregar_gasto():
     print("Gasto agregado.")
 
 
+def mostrar_total():
+    total = sum(gasto["monto"] for gasto in gastos)
+    print(f"Total gastado: ${total:.2f}")
+
+
+
 def menu():
     while True:
         print("\n--- Calculadora de Gastos ---")
@@ -22,7 +28,7 @@ def menu():
         if opcion == "1":
             agregar_gasto()
         elif opcion == "2":
-            pass
+            mostrar_total()
         elif opcion == "3":
             pass
         elif opcion == "4":
