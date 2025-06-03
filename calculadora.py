@@ -25,6 +25,21 @@ def categoria_mayor_gasto():
     mayor_categoria = max(categorias, key=categorias.get)
     print(f"Categoría con mayor gasto: {mayor_categoria} (${categorias[mayor_categoria]:.2f})")
 
+def eliminar_gasto():
+    if not gastos:
+        print("No hay gastos para eliminar.")
+        return
+    
+    for i, gasto in enumerate(gastos):
+        print(f"{i + 1}. {gasto['nombre']} - ${gasto['monto']} - {gasto['categoria']}")
+    
+    indice = int(input("Número del gasto a eliminar: ")) - 1
+
+    if 0 <= indice < len(gastos):
+        eliminado = gastos.pop(indice)
+        print(f"Gasto '{eliminado['nombre']}' eliminado.")
+    else:
+        print("Índice inválido.")
 
 
 def menu():
@@ -45,7 +60,7 @@ def menu():
         elif opcion == "3":
             categoria_mayor_gasto()
         elif opcion == "4":
-            pass
+            eliminar_gasto()
         elif opcion == "5":
             print("Hasta luego!")
             break
