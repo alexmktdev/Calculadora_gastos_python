@@ -1,3 +1,13 @@
+gastos = []
+
+def agregar_gasto():
+    nombre = input("Nombre del gasto: ")
+    monto = float(input("Monto del gasto: "))
+    categoria = input("Categoría: ")
+    gastos.append({"nombre": nombre, "monto": monto, "categoria": categoria})
+    print("Gasto agregado.")
+
+
 def menu():
     while True:
         print("\n--- Calculadora de Gastos ---")
@@ -10,7 +20,7 @@ def menu():
         opcion = input("Elige una opción: ")
         
         if opcion == "1":
-            pass  # Aquí irá la función para agregar gasto
+            agregar_gasto()
         elif opcion == "2":
             pass
         elif opcion == "3":
