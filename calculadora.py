@@ -7,6 +7,12 @@ def agregar_gasto():
     gastos.append({"nombre": nombre, "monto": monto, "categoria": categoria})
     print("Gasto agregado.")
 
+    try:
+        monto = float(input("Monto del gasto: "))
+    except ValueError:
+        print("Monto inválido. Debe ser un número.")
+    return
+
 
 def mostrar_total():
     total = sum(gasto["monto"] for gasto in gastos)
@@ -41,6 +47,12 @@ def eliminar_gasto():
     else:
         print("Índice inválido.")
 
+    # En eliminar_gasto
+    try:
+        indice = int(input("Número del gasto a eliminar: ")) - 1
+    except ValueError:
+        print("Debe ingresar un número.")
+    return
 
 def menu():
     while True:
