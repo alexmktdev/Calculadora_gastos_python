@@ -12,5 +12,7 @@ Una aplicación en consola hecha en Python para gestionar tus gastos:
 
 ## Ejecución
 
+
+# ultimo cambio 
 ```bash
 python calculadora.py
